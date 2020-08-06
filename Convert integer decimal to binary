@@ -1,0 +1,17 @@
+from stack import Stack
+
+def convert_int_to_bin(dec_num):
+  if dec_num==0:
+    return 0
+  stac  = Stack()
+  while dec_num>0:
+   
+    stac.push(dec_num%2)
+    dec_num //=2
+
+  bin_num=""
+  while not stac.is_empty():
+    bin_num+=str(stac.pop())
+
+
+  return bin_num
